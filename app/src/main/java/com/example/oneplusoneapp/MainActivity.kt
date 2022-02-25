@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
 
         buttonA?.setOnClickListener (object : View.OnClickListener{
             override fun onClick(p0: View?) {
-               // if(userInput1.text.toString()!="" || userInput2.text.toString()!="" || userInput3.text.toString()!=""
+                if(userInput1.text.toString()!="" && userInput2.text.toString()!="" && userInput3.text.toString()!="") {
                     textView?.append(userInput1.text)
                     textView?.append("+")
                     textView?.append(userInput2.text)
@@ -36,7 +36,15 @@ class MainActivity : AppCompatActivity() {
                     userInput1.setText("")
                     userInput2.setText("")
                     userInput3.setText("")
-                //)
+                } else{
+                    textView?.append("\n")
+                    //textView?.text = ""
+                    userInput1.setText("")
+                    userInput2.setText("")
+                    userInput3.setText("")
+                }
+
+
 
             }
         })
